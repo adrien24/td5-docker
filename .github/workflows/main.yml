@@ -1,4 +1,4 @@
-name: scp files
+name: deploy vuejs
 on: [push]
 jobs:
 
