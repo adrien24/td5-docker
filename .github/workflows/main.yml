@@ -1,5 +1,8 @@
 name: deploy vuejs
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs:
 
   build:
@@ -12,8 +15,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '16'
-    - run: npm install
-    - run: npm run build
+    - name: install dependencies
+      run: npm install
+    - name: Build
+      run: npm run build
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
     - name: Set up Docker Buildx
