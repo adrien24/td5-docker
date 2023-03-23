@@ -33,7 +33,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: $ {{ github.sha }}
-          path: dist  
+          path: |
+            dist
+            Dickerfile
 
   push:
     runs-on: ubuntu-latest
