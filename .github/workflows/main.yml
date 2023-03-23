@@ -42,6 +42,7 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main'
     steps: 
+      - uses: actions/checkout@master
       - name: Download build artifacts
         uses: actions/download-artifact@v2
         with:
